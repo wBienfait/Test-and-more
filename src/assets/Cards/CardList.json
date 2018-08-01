@@ -1,0 +1,26 @@
+[
+	{
+		"name" : "Card1",
+		"image" : "./assets/Cards/Card1.jpg"
+	},
+		{
+		"name" : "Card2",
+		"image" : "./assets/Cards/Card2.jpg"
+	},
+		{
+		"name" : "Card3",
+		"image" : "./assets/Cards/Card3.jpg"
+	},
+		{
+		"name" : "Card4",
+		"image" : "./assets/Cards/Card4.jpg"
+	},
+		{
+		"name" : "Card5",
+		"image" : "./assets/Cards/Card5.jpg"
+	},
+		{
+		"name" : "Card6",
+		"image" : "./assets/Cards/Card6.jpg"
+	}
+]

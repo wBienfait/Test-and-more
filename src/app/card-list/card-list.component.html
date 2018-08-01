@@ -1,0 +1,6 @@
+<h2>Card List</h2>
+<ul class="list-group">
+    <app-card  *ngFor="let card of fullCardList"
+                       [CardName]="card.name"
+                       [CardImageSrc]="card.image"></app-card>
+</ul>

@@ -1,0 +1,7 @@
+<h2>Deck : {{deckName}}</h2>
+<ul class="list-group">
+    <app-card  *ngFor="let card of deckList"
+                       [CardName]="card.name"
+                       [CardImageSrc]="card.image"></app-card>
+</ul>
+<button (click) = "addCard()">Add Card </button>
