@@ -15,12 +15,13 @@
     <div class="col-xs-12">
       <h2>Components</h2>
       <ul class="list-group">
-        <app-card-list></app-card-list>
+        <app-card-list (selectedCard) = "addCardToDeck($event)"></app-card-list>
       </ul>
       <input type="text" id="new-component">
       <button (click)= "createDeck('new-component')">Create new</button>
       <app-deck *ngIf = "isDeckCreated() == true"
-                [deckName] = deck.deckName></app-deck>
+                [deckName] = deck.deckName
+                [deckList] = "deck.deckList"></app-deck>
     </div>
   </div>
 </div>

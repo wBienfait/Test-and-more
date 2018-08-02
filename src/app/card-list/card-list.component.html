@@ -2,5 +2,6 @@
 <ul class="list-group">
     <app-card  *ngFor="let card of fullCardList"
                        [CardName]="card.name"
-                       [CardImageSrc]="card.image"></app-card>
+                       [CardImageSrc]="card.image"
+                       (newCard) = "addCard($event)"></app-card>
 </ul>

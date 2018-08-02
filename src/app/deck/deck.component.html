@@ -2,6 +2,7 @@
 <ul class="list-group">
     <app-card  *ngFor="let card of deckList"
                        [CardName]="card.name"
-                       [CardImageSrc]="card.image"></app-card>
+                       [CardImageSrc]="card.image"
+                       (newCard) = "removeCard($event)"></app-card>
 </ul>
-<button (click) = "addCard()">Add Card </button>
+<button (click) = "saveDeck()">Save</button>

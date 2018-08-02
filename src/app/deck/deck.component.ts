@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Jsonify } from
 
 @Component({
   selector: 'app-deck',
@@ -7,25 +8,46 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DeckComponent implements OnInit {
 	@Input() deckName : string;
-deckList = [];
+  @Input() deckList = [];
   constructor() { }
 
   ngOnInit() {
   }
 
-  addCard()
+ public addCard(card)
   {
-  	this.deckList.push({ "name" : "Card1", "image" : "./assets/Cards/Card1.jpg"});
+    this.deckList.push(card);
   }
 
-  removeCard(cardName)
+  saveDeck()
+  {
+    saveTextAsFile(hello, "test.json");
+  }
+
+  function saveTextAsFile (data, filename){
+
+        if(!data) {
+            console.error('Console.save: No data')
+            return;
+        }
+
+        if(!filename) filename = 'console.json'
+
+        var blob = new Blob([data], {type: 'text/plain'}),
+            e    = document.createEvent('MouseEvents'),
+            a    = document.createElement('a')
+
+
+  removeCard(event)
   {
   	var i;
+    var name : string = event;
   	for(i = 0; i < this.deckList.length; i++)
   	{
-  		if(this.deckList[i].name == cardName)
+  		if(this.deckList[i].name == name)
   		{
   			this.deckList.splice(i, 1);
+        break;
   		}
   	}
   }

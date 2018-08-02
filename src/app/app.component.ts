@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DeckComponent } from './deck/deck.component';
+import { CardComponent } from './card/card.component';
+
 
 @Component({
   selector: 'app-root',
@@ -20,6 +22,16 @@ isDeckCreated()
 {
 	if(this.deck != null) return true;
 	else return false;
+}
+
+addCardToDeck(event)
+{
+	var newCard = event;
+	if(this.isDeckCreated())
+	{
+		this.deck.addCard(newCard);
+	}
+
 }
 constructor(){};
 

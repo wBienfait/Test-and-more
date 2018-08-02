@@ -14,9 +14,9 @@ import { CardComponent } from './card/card.component';
   declarations: [
     AppComponent,
     FirstComponentComponent,
+    CardComponent,
     CardListComponent,
-    DeckComponent,
-    CardComponent
+    DeckComponent
   ],
   imports: [
     BrowserModule,
