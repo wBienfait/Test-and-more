@@ -42,7 +42,7 @@ addCardToDeck(event)
 
 loadSelectedDeck(elementId)
 {
-	var fileSelected = <HTMLInputElement>document.getElementById(elementId).files[0].name;
+	var fileSelected = (<HTMLInputElement>document.getElementById(elementId)).files[0].name;
 	if(fileSelected != null)
 	{
 		var fileData : object = [];
