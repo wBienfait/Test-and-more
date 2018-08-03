@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Jsonify } from
 
 @Component({
   selector: 'app-deck',
@@ -21,21 +20,17 @@ export class DeckComponent implements OnInit {
 
   saveDeck()
   {
-    saveTextAsFile(hello, "test.json");
+	var text = JSON.stringify(this.deckList),
+    blob = new Blob([text], { type: 'text/plain' }),
+    anchor = document.createElement('a');
+
+	anchor.download = this.deckName + ".json";
+	anchor.href = URL.createObjectURL(blob);
+	anchor.dataset.downloadurl = ['text/plain', anchor.download, anchor.href].join(':');
+	anchor.click();
   }
 
-  function saveTextAsFile (data, filename){
 
-        if(!data) {
-            console.error('Console.save: No data')
-            return;
-        }
-
-        if(!filename) filename = 'console.json'
-
-        var blob = new Blob([data], {type: 'text/plain'}),
-            e    = document.createEvent('MouseEvents'),
-            a    = document.createElement('a')
 
 
   removeCard(event)
